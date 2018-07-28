@@ -2,6 +2,7 @@ package org.wikidata.freebase.rdf;
 
 import com.bigdata.rdf.sail.webapp.ConfigParams;
 import com.bigdata.rdf.sail.webapp.NanoSparqlServer;
+import com.bigdata.rdf.store.DataLoader;
 import com.bigdata.util.httpd.Config;
 import org.eclipse.jetty.server.Server;
 
@@ -41,7 +42,7 @@ public class Main extends NanoSparqlServer {
 
 		System.setProperty("jetty.home", Main.class.getResource("/war").toExternalForm());
 
-		final Server server = Main.newInstance(port, jettyXml, null, initParams);
+		final Server server = NanoSparqlServer.newInstance(port, jettyXml, null, initParams);
 
 		server.start();
 		awaitServerStart(server);
