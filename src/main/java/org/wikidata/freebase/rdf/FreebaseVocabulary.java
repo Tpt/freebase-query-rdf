@@ -16,6 +16,7 @@ public class FreebaseVocabulary extends BigdataCoreVocabulary_v20160317 {
 	@Override
 	protected void addValues() {
 		addDecl(new FreebaseVocabularyDecl());
+		addDecl(new FreebaseInlinedUriVocabularyDecl());
 		super.addValues();
 	}
 }
